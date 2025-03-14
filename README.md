@@ -1,50 +1,88 @@
-# Welcome to your Expo app 👋
+# Weather App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Weather App** je jednostavna mobilna aplikacija za prikaz vremenske prognoze. Omogućava korisnicima da pretražuju vremenske uslove za određeni grad, prikazujući trenutne podatke (temperaturu, vlažnost, brzinu vetra itd.) i petodnevnu prognozu. Aplikacija podržava tamnu i svetlu temu, a koristi se za učenje i demonstraciju osnovnih koncepata mobilnog razvoja.
 
-## Get started
+---
 
-1. Install dependencies
+## Funkcionalnosti
 
+1. **Pretraga vremenske prognoze**:
+   - Korisnici mogu uneti ime grada i dobiti trenutne vremenske uslove.
+   - Prikazuje se temperatura, vlažnost, pritisak, brzina vetra, izlazak i zalazak sunca, vidljivost i ikonica vremena.
+
+2. **Petodnevna prognoza**:
+   - Prikazuje dnevne prognoze za narednih 5 dana.
+   - Za svaki dan prikazuje se datum, temperatura, ikonica vremena i opis.
+
+3. **Tamna i svetla tema**:
+   - Aplikacija podržava prebacivanje između tamne i svetle teme.
+   - Tema se automatski prilagođava sistemskim postavkama korisnika.
+
+4. **Navigacija**:
+   - Koristi se **Expo Router** za navigaciju između ekrana.
+   - Postoji dugme za povratak na prethodni ekran.
+
+5. **Animacije**:
+   - Dugme za pretragu ima jednostavnu animaciju prilikom klika.
+
+6. **Optimizacija**:
+   - Filtriranje podataka za petodnevnu prognozu kako bi se prikazala samo jedna prognoza po danu.
+
+---
+
+## Okruženje i Tehnologije
+
+- **Okruženje**:
+  - Razvojno okruženje: **Expo** (React Native framework za brzi razvoj mobilnih aplikacija).
+  - Platforma: **iOS** i **Android**.
+
+- **Programski jezici i alati**:
+  - **TypeScript**: Glavni programski jezik za pisanje aplikacije.
+  - **React Native**: Biblioteka za izgradnju korisničkog interfejsa.
+  - **Expo Router**: Za navigaciju između ekrana.
+  - **Axios**: Za HTTP zahteve ka OpenWeatherMap API-ju.
+  - **React Native Reanimated**: Za animacije (npr. animirano dugme za pretragu).
+  - **Ionicons**: Za ikonice.
+
+---
+
+## Korišćeni API
+
+- **OpenWeatherMap API**:
+  - Koristi se za dobijanje podataka o vremenskoj prognozi.
+  - Endpointi:
+    - Trenutna prognoza: `https://api.openweathermap.org/data/2.5/weather`
+    - Petodnevna prognoza: `https://api.openweathermap.org/data/2.5/forecast`
+
+---
+
+## Glavne Komponente
+
+1. **`index.tsx`**:
+   - Glavni ekran za pretragu vremenske prognoze.
+   - Prikazuje formu za unos grada i dugme za pretragu.
+
+2. **`details.tsx`**:
+   - Ekran sa detaljima o vremenskoj prognozi.
+   - Prikazuje trenutne podatke i petodnevnu prognozu.
+
+3. **`explore.tsx`**:
+   - Ekran za istraživanje dodatnih informacija o aplikaciji.
+
+4. **`_layout.tsx`**:
+   - Glavni layout aplikacije.
+   - Upravlja navigacijom i temama.
+
+5. **`ThemeContext.tsx`**:
+   - Kontekst za upravljanje temama (tamna/svetla).
+
+---
+
+## Instalacija i Pokretanje
+
+1. Klonirajte repozitorijum:
    ```bash
-   npm install
-   ```
+   git clone https://github.com/vas-username/weather-app.git
+   cd weather-app
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2. Dodajte Vas API kljuc sa `https://api.openweathermap.org`
